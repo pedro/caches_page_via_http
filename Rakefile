@@ -3,5 +3,5 @@ require 'rake'
 
 task :default => :test
 task :test do
-  ruby "test/caches_page_via_http_spec.rb"
+  ruby "test/caches_page_via_http_test.rb"
 end
