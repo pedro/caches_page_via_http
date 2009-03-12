@@ -34,19 +34,19 @@ class CachesPageTest < Test::Unit::TestCase
 
   def test_not_crashing
     get 'index'
-    assert_equal(200, @response.headers['Status'].to_i)
-    assert_equal('ok', @response.body)
+    assert_equal 200, @response.headers['Status'].to_i
+    assert_equal 'ok', @response.body
   end
 
   def test_cache_control_header
     get 'index'
-    assert_equal('public; max-age=360', @response.headers['Cache-Control'])
+    assert_equal 'public; max-age=360', @response.headers['Cache-Control']
   end
 
   def test_doesnt_affect_actions_not_cached
     get 'nocache'
-    assert_equal(200, @response.headers['Status'].to_i)
-    assert_equal('ok', @response.body)
-    assert_match(/no-cache|private, max-age=0, must-revalidate/, @response.headers['Cache-Control'])
+    assert_equal 200, @response.headers['Status'].to_i
+    assert_equal 'ok', @response.body
+    assert_match /no-cache|private, max-age=0, must-revalidate/, @response.headers['Cache-Control']
   end
 end
