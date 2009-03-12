@@ -1,0 +1,6 @@
+= caches_page via HTTP
+
+Modifies caches_page on Rails to use HTTP headers instead of filesystem dumps.
+
+Extracted from the patch by Ricardo Chimal:
+http://github.com/ricardochimal/rails/commit/ecd52a0f6b841d8a84f95fddff1ae4c774e4440e
