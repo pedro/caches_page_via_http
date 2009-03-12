@@ -40,7 +40,7 @@ class CachesPageTest < Test::Unit::TestCase
 
   def test_cache_control_header
     get 'index'
-    assert_equal 'public, max-age=360', @response.headers['Cache-Control']
+    assert_equal 'public, max-age=300', @response.headers['Cache-Control']
   end
 
   def test_doesnt_affect_actions_not_cached
