@@ -47,6 +47,6 @@ class CachesPageTest < Test::Unit::TestCase
     get 'nocache'
     assert_equal(200, @response.headers['Status'].to_i)
     assert_equal('ok', @response.body)
-    assert ['no-cache', 'private, max-age=0, must-revalidate'].include?(@response.headers['Cache-Control'])
+    assert_match(/no-cache|private, max-age=0, must-revalidate/, @response.headers['Cache-Control'])
   end
 end
